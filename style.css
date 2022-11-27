@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url(./images/bg-top.svg), url(./images/bg-bottom.svg);
+    background-position: right top, left bottom;
+    background-size:200px auto;
+    background-repeat: no-repeat;
+    padding: 20px;
+}
+
+main {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.up {
+    display: flex;
+    flex-flow:column wrap;
+}
+.up h1 {
+    color: hsl(233, 13%, 49%);
+}
+.up .togglePrice_sec{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+.up span {
+    color: hsl(234, 14%, 74%);
+    font-weight: 700;
+}
+
+.togglePrice__btn {
+    background: linear-gradient(to left, hsl(237, 63%, 64%), hsl(236, 72%, 79%) );
+    width: 45px;
+    height: 25px;
+    border-radius: 50px;
+    margin: auto 20px;
+    position: relative;
+    --right:2.5px;
+    cursor: pointer;
+}
+.togglePrice__btn:after  {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 100px;
+    top:2.5px ;
+    right: var(--right);
+    transition: 0.3s;
+  
+}
+
+.togglePrice__btn[left_placed] {
+    --right:22.5px;
+}
+
+/* BOXES */
+.pricing_boxes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 2;
+    margin-top: 60px;
+    justify-content: center;
+    /* grid-template-columns: repeat(auto-fill,minmax(150px,5fr)); */
+}
+.pricing_boxes li {
+    list-style: none;
+}
+.pricing_boxes .box {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 20px 2px #ddd;
+    min-width: 220px;
+}
+.pricing_boxes .box:hover {
+    box-shadow: 0 0 20px 10px #ddd;
+}
+.pricing_boxes .box:hover:after {
+    box-shadow: 0 0 20px 10px #ddd !important;
+}
+.pricing_boxes .plan_title {
+    font-size: 14px;
+    color: hsl(233, 13%, 49%);
+    margin-bottom: 15px;
+
+}
+.pricing_boxes .box .price {
+    position: relative;
+    font-size: 45px;
+    font-weight: 700;
+    color: hsl(232, 13%, 33%);
+}
+.pricing_boxes .box .price::before {
+    content: '$';
+    font-size: 25px;
+    position: absolute;
+    transform: translateY(-50%);
+    left: -18px;
+    top: 50%;
+}
+.pricing_boxes ul {
+    margin-top: 15px;
+
+}
+/*plan features */
+.pricing_boxes ul li {
+    position: relative;
+    padding: 10px 5px;
+    border-top:solid hsl(234, 14%, 84%);
+    border-width:1px 0;
+}
+
+.pricing_boxes ul li:last-child {
+    border-bottom:solid hsl(234, 14%, 84%);
+    border-width:1px 0;
+   
+}
+
+.pricing_boxes ul li span {
+    font-size: 10px;
+    color: hsl(232, 13%, 33%);
+    font-weight: 700;
+}
+
+.pricing_boxes .learnMore_btn {
+    margin-top: 20px;
+    color: hsl(240, 78%, 98%);
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+    cursor: pointer;
+    background: linear-gradient(to left, hsl(237, 63%, 64%), hsl(236, 72%, 79%) );
+}
+
+.pricing_boxes .learnMore_btn:hover {
+    opacity: 0.7;
+}
+
+.pricing_boxes .box:first-of-type {
+    border-radius: 15px 0 0 15px;
+}
+.pricing_boxes .box:last-child {
+    border-radius: 0 15px 15px 0;
+}
+/* styles for the middle box */
+.pricing_boxes .box:nth-of-type(2)  {
+    position: relative;
+    background: none;
+    box-shadow: none;
+}
+.pricing_boxes .box:nth-of-type(2) * {
+    color: #fff;
+}
+.pricing_boxes .box:nth-of-type(2) .learnMore_btn {
+    background: #fff;
+    color: hsl(237, 63%, 64%);
+}
+
+.pricing_boxes .box:nth-of-type(2):after {
+    position: absolute;
+    content:"";
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    background: linear-gradient(305deg, hsl(237, 63%, 64%), hsl(236, 72%, 79%) );
+    width: 100%;
+    height: 110%;
+    z-index: -1;
+    border-radius: 12px;
+    box-shadow: 0 0 20px 2px #ddd;
+}
+
+@media only screen and (max-width:840px) {
+    .pricing_boxes {
+        flex-direction: column;
+    }
+    .pricing_boxes .box {
+        margin: 20px auto;
+        border-radius: 12px !important;
+    }
+}
+
+
+.attribution {
+        margin: 10px;
+    background: linear-gradient(to left, hsl(237, 63%, 64%), hsl(236, 72%, 79%) );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: sticky;
+    bottom: 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: calc(1vw + 4px);
+}
+.attribution a {
+    margin: auto 5px;
+    text-decoration: none;
+    color: aqua;
+    letter-spacing: 1px;
+}
+
