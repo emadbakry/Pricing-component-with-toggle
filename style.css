@@ -40,7 +40,7 @@ main {
 }
 
 .togglePrice__btn {
-    background: linear-gradient(to left, hsl(237, 63%, 64%), hsl(236, 72%, 79%) );
+    background: linear-gradient(-90deg, hsl(237, 63%, 64%), hsl(236, 72%, 79%) );
     width: 45px;
     height: 25px;
     border-radius: 50px;
@@ -48,6 +48,7 @@ main {
     position: relative;
     --right:2.5px;
     cursor: pointer;
+    transition: 1.4s;
 }
 .togglePrice__btn:after  {
     position: absolute;
@@ -64,7 +65,10 @@ main {
 
 .togglePrice__btn[left_placed] {
     --right:22.5px;
+    background: linear-gradient(90deg, hsl(237, 63%, 64%), hsl(236, 72%, 79%) );
+
 }
+
 
 /* BOXES */
 .pricing_boxes {
